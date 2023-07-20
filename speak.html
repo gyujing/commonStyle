@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/json" src="jquery.js"></script>
+</head>
+<style>
+    .line{
+        height: 20px;
+    }
+    .speak{
+        position: relative;
+        background: #19bdfd;
+        width: 400px;
+        height: 100px;
+        margin-left: 200px;
+        border-radius: 20px;
+    }
+    span{
+        line-height: 100px;
+        padding-left: 20px;
+    }
+    .triangle{
+        position: absolute;
+        border: 25px solid transparent;
+        border-right-color: #19bdfd;
+        top: 25px;
+        left: -50px;
+    }
+    .speak2{
+        position: relative;
+        background: silver;
+        width: 400px;
+        height: 100px;
+        margin-left: 200px;
+        border-radius: 20px;
+        border: 5px solid red;
+        z-index: 200;
+    }
+    .triangle2{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 70px;
+        left: calc(50% - 25px);
+        background-color: inherit;
+        border:inherit;
+       /*---关键代码 start---*/
+       /* x、y坐标轴*/
+        clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+        transform: rotate(-45deg);
+        /*---end---*/
+        border-bottom-left-radius: 15px
+    }
+</style>
+<body>
+<div class="speak">
+    <span>通过border</span>
+    <div class="triangle"></div>
+</div>
+<div class="line"></div>
+<div class="speak2">
+    <span>通过裁剪</span>
+    <div class="triangle2"></div>
+</div>
+</body>
+</html>
